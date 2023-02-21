@@ -20,6 +20,10 @@
 
     <title>초미니홈피 - 팬명록</title>
 
+    <meta property="og:title" content="휘인 팬명록" />
+    <meta property="og:description" content="아티스트에게 응원 한마디!" />
+    <meta property="og:image" content="https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/SXVLZKGX6ZTIT3L2EIQ6GRKODA.jpg" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap"
       rel="stylesheet"
@@ -37,7 +41,7 @@
             rgba(0, 0, 0, 0.5),
             rgba(0, 0, 0, 0.5)
           ),
-          url("https://cdn.topstarnews.net/news/photo/201807/456143_108614_510.jpg");
+          url("https://cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/SXVLZKGX6ZTIT3L2EIQ6GRKODA.jpg");
         background-position: center 30%;
         background-size: cover;
 
@@ -82,7 +86,7 @@
         fetch("http://spartacodingclub.shop/sparta_api/weather/seoul")
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            $("#temp").text(data["temp"]);
           });
       }
       function save_comment() {
@@ -105,9 +109,9 @@
           .then((data) => {
             $("#comment-list").empty();
             data.forEach((one) => {
-              let name = one['name'];
-              let comment = one['comment'];
-              $('#comment-list').append(`<div class="card">
+              let name = one["name"];
+              let comment = one["comment"];
+              $("#comment-list").append(`<div class="card">
                                             <div class="card-body">
                                             <blockquote class="blockquote mb-0">
                                                 <p>${comment}</p>
@@ -121,9 +125,10 @@
       }
     </script>
   </head>
+
   <body>
     <div class="mypic">
-      <h1>십센치(10cm) 팬명록</h1>
+      <h1>휘인 팬명록</h1>
       <p>현재기온: <span id="temp">36</span>도</p>
     </div>
     <div class="mypost">
