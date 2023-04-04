@@ -9,14 +9,17 @@ client = MongoClient(
 db = client.dbsparta
 
 doc = {
-    'name': '영수',
+    'name': '철수',
     'age': 24
 }
 db.users.insert_one(doc)
 db.users.insert_one({'name': 'bobby', 'age': 21})
 
-# 데이터마다 id값이 자동으로 생기는데 데이터 추출 시 누락시킬 수 있는 방법
-all_users = list(db.users.find({}, {'_id': False}))
+find = db.users.find({'name': '철수'})
+print(list(find))
 
-for user in all_users:
-    print(user)
+# 데이터마다 id값이 자동으로 생기는데 데이터 추출 시 누락시킬 수 있는 방법
+# all_users = list(db.users.find({}, {'_id': False}))
+
+# for user in all_users:
+    # print(user)
