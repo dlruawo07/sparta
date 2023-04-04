@@ -6,13 +6,6 @@ const rl = readline.createInterface({
 });
 
 function getThreeDigitRandomNumber() {
-  // let ret = "";
-  // for (let i = 0; i < 3; i++) {
-  //   let random = Math.floor(Math.random() * 10);
-  //   while (ret.search(random) !== -1) random = Math.floor(Math.random() * 10);
-  //   ret += random;
-  // }
-  // return ret;
   let ret = new Set();
   while (ret.size !== 3) {
     ret.add(Math.floor(Math.random() * 10));
@@ -21,13 +14,21 @@ function getThreeDigitRandomNumber() {
 }
 
 function checkNumber(answer, guess) {
+  if (isNaN(guess) || guess.length !== 3) return "3자리 숫자를 입력하세요";
+
+  if ([...new Set(guess.split(""))].length < 3)
+    return "서로 다른 숫자 3개를 입력하세요";
+
   if (answer === guess) return "3S";
+
   let countS = 0;
   let countB = 0;
+
   for (let i = 0; i < guess.length; i++) {
     if (answer[i] === guess[i]) countS++;
     else if (answer.indexOf(guess[i]) !== -1) countB++;
   }
+
   return countB === 3 ? "3B" : `${countB}B${countS}S`;
 }
 
