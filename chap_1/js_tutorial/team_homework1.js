@@ -6,13 +6,18 @@ const rl = readline.createInterface({
 });
 
 function getThreeDigitRandomNumber() {
-  let ret = "";
-  for (let i = 0; i < 3; i++) {
-    let ran = Math.floor(Math.random() * 10);
-    while (ret.search(ran) !== -1) ran = Math.floor(Math.random() * 10);
-    ret += ran;
+  // let ret = "";
+  // for (let i = 0; i < 3; i++) {
+  //   let random = Math.floor(Math.random() * 10);
+  //   while (ret.search(random) !== -1) random = Math.floor(Math.random() * 10);
+  //   ret += random;
+  // }
+  // return ret;
+  let ret = new Set();
+  while (ret.size !== 3) {
+    ret.add(Math.floor(Math.random() * 10));
   }
-  return ret;
+  return Array.from(ret).join("");
 }
 
 function checkNumber(answer, guess) {

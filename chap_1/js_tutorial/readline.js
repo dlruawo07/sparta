@@ -1,5 +1,3 @@
-42;
-
 var readline = require("readline");
 var log = console.log;
 
