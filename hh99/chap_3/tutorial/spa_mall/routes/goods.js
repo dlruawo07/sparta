@@ -68,12 +68,13 @@ router.post("/goods/", async (req, res) => {
   res.json({ goods: createdGoods });
 });
 
-router.get("/goods", (req, res) => {
+router.get("/goods", async (req, res) => {
+  const goods = await Goods.find({});
   res.status(200).json({ goods });
 });
 
-router.get("/goods/:goodsId", (req, res) => {
-  // req.params
+router.get("/goods/:goodsId", async (req, res) => {
+  const goods = await Goods.find({});
   const { goodsId } = req.params;
 
   const [result] = goods.filter((good) => good.goodsId === Number(goodsId));
