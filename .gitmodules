@@ -10,3 +10,6 @@
 [submodule "hh99/chap_3/hw_lv2"]
 	path = hh99/chap_3/hw_lv2
 	url = https://github.com/dlruawo07/hw_lv2
+[submodule "hh99/chap_3/hw_lv3"]
+	path = hh99/chap_3/hw_lv3
+	url = https://github.com/dlruawo07/hw_lv3
