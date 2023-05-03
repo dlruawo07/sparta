@@ -1,7 +1,8 @@
+const { Posts } = require("../models/");
 const PostRepository = require("../repositories/posts.repository");
 
 class PostService {
-  postRepository = new PostRepository();
+  postRepository = new PostRepository(Posts);
 
   findAllPost = async () => {
     // 저장소(Repository)에게 데이터를 요청합니다.
