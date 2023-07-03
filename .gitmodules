@@ -19,3 +19,6 @@
 [submodule "hh99/chap_3/hw_lv5"]
 	path = hh99/chap_3/hw_lv5
 	url = https://github.com/dlruawo07/hw_lv5
+[submodule "hh99/project/22-project"]
+	path = hh99/project/22-project
+	url = https://github.com/dlruawo07/22-project
